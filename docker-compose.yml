@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  n8n-user-manager:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - N8N_URL=${N8N_URL}
+      - N8N_API_KEY=${N8N_API_KEY}
+      - APP_ACCESS_CODE=${APP_ACCESS_CODE}
+      - PORT=3000
+    restart: unless-stopped
